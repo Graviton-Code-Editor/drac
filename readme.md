@@ -2,10 +2,13 @@
    <h1>Puffin-Drac</h1>
 </p>
 
-## Status
+## ⚠ Warning
+I do not consider myself an UI designer.
+
+## ❔ Status
 Super alpha. WIP.
 
-### About
+### 🎈 About
 
-This package allows you to use Drac system design right in Puffin.
+PuffinJS integration for Drac design.
 
