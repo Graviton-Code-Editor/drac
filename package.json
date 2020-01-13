@@ -1,0 +1,17 @@
+{
+  "name": "puffin-drac",
+  "version": "0.0.1",
+  "description": "Use Drac System Design right in Puffin.",
+  "main": "src/main.js",
+  "dependencies": {
+    "@mkenzo_8/puffin": "^0.1.30"
+  },
+  "devDependencies": {
+    "parcel": "^1.12.4"
+  },
+  "scripts": {
+    "test": "parcel test/index.html"
+  },
+  "author": "Marc Espín Sanz <mespinsanz@gmail.com>",
+  "license": "MIT"
+}
