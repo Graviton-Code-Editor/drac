@@ -11,11 +11,11 @@ const App = puffin.element(`
         </RadioGroup>
     </div>
 `,{
-    methods:[
-        function radioSelected(e){
+    methods:{
+        radioSelected(e){
             console.log(e.detail.target)
         }
-    ],
+    },
     components:{
         Button,
         RadioGroup

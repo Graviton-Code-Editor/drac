@@ -1,5 +1,5 @@
 <p align="center">
-   <h1>Puffin-Drac</h1>
+   <h1>Drac</h1>
 </p>
 
 ## ⚠ Warning
@@ -8,7 +8,11 @@ I do not consider myself an UI designer.
 ## ❔ Status
 Super alpha. WIP.
 
+## 🤔Testing
+
+Check the test [project](https://github.com/Graviton-Code-Editor/drac/tree/master/test)
+
 ### 🎈 About
 
-PuffinJS integration for Drac design.
+Drac is the Design system used in Graviton. This packages is a set of [PuffinJS](https://github.com/PuffinJS/puffin) components.
 

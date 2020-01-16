@@ -4,7 +4,7 @@
   "description": "Use Drac System Design right in Puffin.",
   "main": "src/main.js",
   "dependencies": {
-    "@mkenzo_8/puffin": "^0.1.30"
+    "@mkenzo_8/puffin": "^0.2.6"
   },
   "devDependencies": {
     "parcel": "^1.12.4"

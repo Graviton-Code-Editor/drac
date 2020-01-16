@@ -1,6 +1,11 @@
 import  {puffin} from '@mkenzo_8/puffin'
 
 const RadioGroupWrapper = puffin.style.div`
+    &{
+        --accentRadioColor:#0180F4;
+        --secondaryColor:#EFEFEF;
+        --thirdColor:#CFCFCF;
+    }
     & div{
         font-family:Montserrat, sans-serif;
         padding:5px;
@@ -10,10 +15,11 @@ const RadioGroupWrapper = puffin.style.div`
         right:0px;
     }
     & label input:checked ~ .circle{
-        border: 6px solid  #0180F4;
+        border: 6px solid var(--puffinPrimaryAccent,var(--accentRadioColor));
         transition:0.2s;
     } 
     & label {
+        transition:0.05s;
         display:flex;
         padding:5px;
         padding-right:15px;
@@ -22,12 +28,12 @@ const RadioGroupWrapper = puffin.style.div`
         border-radius:10px;
     }
     & label:hover{
-        background:#EFEFEF;
+        transition:0.05s;
+        background: var(--puffinPrimaryAccent,var(--secondaryColor));
     }
     & label p{
         margin:0;
         white-space:nowrap;
-
     }
     & label input{
        display:none;
@@ -37,9 +43,9 @@ const RadioGroupWrapper = puffin.style.div`
         box-sizing:border-box;
         min-height:25px;
         min-width:25px;
-        background: #EFEFEF;
+        background: var(--puffinPrimaryAccent,var(--secondaryColor));
         border-radius:50px;
-        border:3px solid #CFCFCF;
+        border:3px solid var(--puffinPrimaryAccent,var(--thirdColor));
         margin-right:12px;
         
     } 
