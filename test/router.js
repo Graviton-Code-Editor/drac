@@ -3,6 +3,7 @@ import {puffin} from '@mkenzo_8/puffin'
 import ButtonsRouter from './routes/buttons'
 import HomeRouter from './routes/home'
 import RadioGroupRouter from './routes/radio_groups'
+import TextRouter from './routes/text'
 
 const Router = new puffin.router([
     {
@@ -19,6 +20,11 @@ const Router = new puffin.router([
         path:'/radio_group', 
         component:RadioGroupRouter,
         title:'Radio group'
+    },
+    {
+        path:'/text', 
+        component:TextRouter,
+        title:'Text'
     }
   ])
 

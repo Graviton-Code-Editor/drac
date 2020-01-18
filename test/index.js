@@ -9,6 +9,7 @@ const App = puffin.element(`
             <routerLink class="active" path="/">Home</routerLink>
             <routerLink path="/buttons">Buttons</routerLink>
             <routerLink path="/radio_group">Radio Groups</routerLink>
+            <routerLink path="/text">Text</routerLink>
         </NavBar>
         <routerBox/>
     </div>

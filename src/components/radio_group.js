@@ -6,6 +6,7 @@ const RadioGroupWrapper = puffin.style.div`
         --accentLightColor:#53A1EA;
         --secondaryColor:#EFEFEF;
         --thirdColor:#CFCFCF;
+        --textColor:black;
     }
     & div{
         font-family:Montserrat, sans-serif;
@@ -14,6 +15,7 @@ const RadioGroupWrapper = puffin.style.div`
         display:inline-block;
         white-space:prewrap;
         right:0px;
+        color:var(--puffinTextColor,var(--textColor));
     }
     & label input:checked ~ .circle{
         border: 6px solid var(--puffinAccent,var(--accentColor));

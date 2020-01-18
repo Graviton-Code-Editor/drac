@@ -2,6 +2,11 @@
    <h1>Drac</h1>
 </p>
 
+## Components
+* Button
+* Radio Group
+* NavBar
+
 ## ⚠ Warning
 I do not consider myself an UI designer.
 

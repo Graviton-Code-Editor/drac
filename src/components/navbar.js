@@ -5,22 +5,26 @@ const NavbarWrapper = puffin.style.div`
         --accentColor:#0180F4;
         --accentLightColor:#53A1EA;
         --textColor:black;
+        --textColorHovering:#515151;
         --textColorInAccent:white;
     }
     & *{
         font-family:Montserrat, sans-serif;
         
     }
-    & > *{
+    & > a{
         display:inline-block;
         padding:8px 9px;
         margin:5px;
-        color:var(--puffinTextColor,var(--textColor));
         border-radius:7px;
+        cursor:pointer;
     }
-    & > *.active {
+    & > a.active {
         background:var(--puffinAccent,var(--accentColor));
         color:var(--puffinTextColor,var(--textColorInAccent))
+    }
+    & > a:hover {
+        color:var(--puffinTextColorHovering,var(--textColorHovering))
     }
 `
 const NavBar = puffin.element(`

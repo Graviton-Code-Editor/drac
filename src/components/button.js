@@ -2,10 +2,11 @@ import  {puffin} from '@mkenzo_8/puffin'
 
 const Button = puffin.style.button`
     &{
-        font-family:Montserrat, sans-serif;
         --accentColor:#0066FF;
         --secondaryColor:#EFEFEF;
+        --textColor:black;
         transition:0.1s;
+        font-family:Montserrat, sans-serif;
         padding:10px 20px;
         background:var(--secondaryColor);
         border:0;
@@ -14,6 +15,7 @@ const Button = puffin.style.button`
         box-shadow:0px 0px 0px 0px rgba(0,0,0,0) ,0 0 0 0px var(--puffinAccent,var(--accentColor)); 
         margin:5px;
         border-radius:5px;
+        color:var(--puffinTextColor,var(--textColor));
     }
     &:hover:not(:active){
         cursor:pointer;
