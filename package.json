@@ -1,7 +1,7 @@
 {
   "name": "puffin-drac",
-  "version": "0.0.1",
-  "description": "Use Drac System Design right in Puffin.",
+  "version": "0.0.2",
+  "description": "Drac Design System for PuffinJS",
   "main": "src/main.js",
   "dependencies": {
     "@mkenzo_8/puffin": "^0.2.6"

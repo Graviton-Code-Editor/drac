@@ -1,14 +1,16 @@
 import {puffin} from '@mkenzo_8/puffin'
+import Router from './router'
 
-const { Button, RadioGroup} = require('../src/main')
+const { Button, RadioGroup, NavBar} = require('../src/main')
 
 const App = puffin.element(`
     <div>
-        <Button>continue</Button>
-        <RadioGroup radioSelected="$radioSelected">
-            <label>Configuration of something</label>
-            <label checked="">Option 1</label>
-        </RadioGroup>
+        <NavBar>
+            <routerLink class="active" path="/">Home</routerLink>
+            <routerLink path="/buttons">Buttons</routerLink>
+            <routerLink path="/radio_group">Radio Groups</routerLink>
+        </NavBar>
+        <routerBox/>
     </div>
 `,{
     methods:{
@@ -18,7 +20,10 @@ const App = puffin.element(`
     },
     components:{
         Button,
-        RadioGroup
+        RadioGroup,
+        NavBar,
+        routerBox:Router.box,
+        routerLink:Router.link
     }
 })
 

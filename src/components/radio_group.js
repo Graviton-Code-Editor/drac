@@ -2,7 +2,8 @@ import  {puffin} from '@mkenzo_8/puffin'
 
 const RadioGroupWrapper = puffin.style.div`
     &{
-        --accentRadioColor:#0180F4;
+        --accentColor:#0180F4;
+        --accentLightColor:#53A1EA;
         --secondaryColor:#EFEFEF;
         --thirdColor:#CFCFCF;
     }
@@ -15,7 +16,7 @@ const RadioGroupWrapper = puffin.style.div`
         right:0px;
     }
     & label input:checked ~ .circle{
-        border: 6px solid var(--puffinPrimaryAccent,var(--accentRadioColor));
+        border: 6px solid var(--puffinAccent,var(--accentColor));
         transition:0.2s;
     } 
     & label {
@@ -29,7 +30,7 @@ const RadioGroupWrapper = puffin.style.div`
     }
     & label:hover{
         transition:0.05s;
-        background: var(--puffinPrimaryAccent,var(--secondaryColor));
+        background: var(--puffinAccent,var(--secondaryColor));
     }
     & label p{
         margin:0;
@@ -43,11 +44,14 @@ const RadioGroupWrapper = puffin.style.div`
         box-sizing:border-box;
         min-height:25px;
         min-width:25px;
-        background: var(--puffinPrimaryAccent,var(--secondaryColor));
+        background: var(--puffinAccent,var(--secondaryColor));
         border-radius:50px;
-        border:3px solid var(--puffinPrimaryAccent,var(--thirdColor));
+        border:3px solid var(--puffinAccent,var(--thirdColor));
         margin-right:12px;
-        
+    } 
+    & label:active .circle{
+        transition:0.2s;
+        box-shadow:0px 0px 0px 3px var(--puffinAccentLight,var(--accentLightColor));        
     } 
 `
 const RadioGroup = puffin.element(`
@@ -57,6 +61,7 @@ const RadioGroup = puffin.element(`
 `,{
     events:{
         mounted(target){
+            if(target.children[0].tagName == "DIV") return;
             const randomName = Math.random()
             const tempContent = target.innerHTML;
             target.innerHTML = `<div>${tempContent}</div>`
