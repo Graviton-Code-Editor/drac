@@ -5,7 +5,9 @@ const NavbarWrapper = puffin.style.div`
         --accentColor:#0180F4;
         --accentLightColor:#53A1EA;
         --textColor:black;
-        --textColorHovering:#515151;
+        --backgroundColor:transparent;
+        --backgroundColorHovering:#EFEFEF;
+        --textColorHovering:black;
         --textColorInAccent:white;
     }
     & *{
@@ -24,15 +26,13 @@ const NavbarWrapper = puffin.style.div`
         color:var(--puffinTextColor,var(--textColorInAccent))
     }
     & > a:hover {
-        color:var(--puffinTextColorHovering,var(--textColorHovering))
+        transition:0.07s;
+        color:var(--puffinTextColorHovering,var(--textColorHovering));
+        background:var(--puffinBackgroundColorHovering,var(--backgroundColorHovering))
     }
 `
 const NavBar = puffin.element(`
-    <NavbarWrapper>
-        <div>
-
-        </div>
-    </NavbarWrapper>
+    <NavbarWrapper> </NavbarWrapper>
 `,{
     events:{
         mounted(target){

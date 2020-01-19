@@ -57,9 +57,7 @@ const RadioGroupWrapper = puffin.style.div`
     } 
 `
 const RadioGroup = puffin.element(`
-    <RadioGroupWrapper>
-        
-    </RadioGroupWrapper>
+    <RadioGroupWrapper> </RadioGroupWrapper>
 `,{
     events:{
         mounted(target){

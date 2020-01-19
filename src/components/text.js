@@ -9,6 +9,7 @@ const Text = puffin.style.p`
         margin:3px;
         padding:5px;
         color:var(--puffinTextColor,var(--textColor));
+        font-weight:normal;
     }
 `
 export default Text
