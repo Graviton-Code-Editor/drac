@@ -7,6 +7,7 @@ const NavbarWrapper = puffin.style.div`
         --textColor:black;
         --backgroundColor:transparent;
         --backgroundColorHovering:#EFEFEF;
+        --backgroundColorActive:#155BC5;
         --textColorHovering:black;
         --textColorInAccent:white;
     }
@@ -24,6 +25,10 @@ const NavbarWrapper = puffin.style.div`
     & > a.active {
         background:var(--puffinAccent,var(--accentColor));
         color:var(--puffinTextColor,var(--textColorInAccent))
+    }
+    & > a.active:active {
+        transition:0.07s;
+        background:var(--puffinBackgroundColorActive,var(--backgroundColorActive))
     }
     & > a:hover {
         transition:0.07s;

@@ -4,6 +4,7 @@ const Button = puffin.style.button`
     &{
         --accentColor:#0066FF;
         --secondaryColor:#EFEFEF;
+        --disabledColor:#D8D8D8;
         --textColor:black;
         transition:0.1s;
         font-family:Montserrat, sans-serif;
@@ -27,6 +28,10 @@ const Button = puffin.style.button`
         outline:0;
         box-sizing: border-box;
         box-shadow:0px 1px 5px 3px rgba(0,0,0,.05) ,0 0 0 3px var(--puffinAccent,var(--accentColor));  
+    }
+    &.disabled{
+        pointer-events: none;
+        background:var(--puffinDisabledColor,var(--disabledColor));
     }
 `
 export default Button
