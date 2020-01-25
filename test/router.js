@@ -4,6 +4,7 @@ import ButtonsRouter from './routes/buttons'
 import HomeRouter from './routes/home'
 import RadioGroupRouter from './routes/radio_groups'
 import TextRouter from './routes/text'
+import CardRouter from './routes/card'
 
 const Router = new puffin.router([
     {
@@ -25,6 +26,11 @@ const Router = new puffin.router([
         path:'/text', 
         component:TextRouter,
         title:'Text'
+    },
+    {
+        path:'/card', 
+        component:CardRouter,
+        title:'Cards'
     }
   ])
 

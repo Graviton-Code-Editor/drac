@@ -3,11 +3,13 @@ import RadioGroup from './components/radio_group'
 import NavBar from './components/navbar'
 import Text from './components/text'
 import Titles from './components/title'
+import Card from './components/card'
 
 module.exports = {
     Button,
     RadioGroup,
     NavBar,
     Text,
-    Titles
+    Titles,
+    Card
 }
