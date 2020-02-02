@@ -1,5 +1,26 @@
 import  {puffin} from '@mkenzo_8/puffin'
 
+
+function Option(name,radio,target){
+    console.log(radio)
+    const text = radio.textContent
+    radio.innerText = ""
+    return new puffin.element(`
+        <div class="wrapper">
+            <input click="$selected" type="radio" name="${name}" ${radio.getAttribute("checked")==""?"checked=''":""} />
+            <div class="circle"></div>
+            <p>${text}</p> 
+        </div>
+    `,{
+        methods:{
+            selected(){
+                const event = new CustomEvent('radioSelected', { detail: {target:radio} });
+                target.dispatchEvent(event);
+            }
+        }
+    })
+}
+
 const RadioGroupWrapper = puffin.style.div`
     &{
         --accentColor:#0180F4;
@@ -8,19 +29,24 @@ const RadioGroupWrapper = puffin.style.div`
         --thirdColor:#CFCFCF;
         --textColor:black;
     }
-    & div{
-        font-family:Montserrat, sans-serif;
+    & .wrapper{
+        display:flex;
+        left:0;
+        width:auto;
+    }
+    &{
+        --font:Montserrat, sans-serif;
+        font-family:var(--puffinFont,var(--font));
         padding:5px;
         margin:3px;
         display:inline-block;
-        white-space:prewrap;
-        right:0px;
+        right:0;
         color:var(--puffinTextColor,var(--textColor));
     }
     & label input:checked ~ .circle{
         border: 6px solid var(--puffinAccent,var(--accentColor));
         transition:0.2s;
-    } 
+    }
     & label {
         transition:0.05s;
         display:flex;
@@ -29,6 +55,7 @@ const RadioGroupWrapper = puffin.style.div`
         align-items: center; 
         white-space:pre-wrap;
         border-radius:10px;
+        right:0;
     }
     & label:hover{
         transition:0.05s;
@@ -37,6 +64,7 @@ const RadioGroupWrapper = puffin.style.div`
     & label p{
         margin:0;
         white-space:nowrap;
+        color:var(--puffinTextColor);
     }
     & label input{
        display:none;
@@ -44,17 +72,17 @@ const RadioGroupWrapper = puffin.style.div`
     & label .circle{
         transition:0.2s;
         box-sizing:border-box;
-        min-height:25px;
-        min-width:25px;
+        height:25px;
+        width:25px;
         background: var(--puffinAccent,var(--secondaryColor));
         border-radius:50px;
         border:3px solid var(--puffinAccent,var(--thirdColor));
         margin-right:12px;
-    } 
+    }
     & label:active .circle{
         transition:0.2s;
         box-shadow:0px 0px 0px 3px var(--puffinAccentLight,var(--accentLightColor));        
-    } 
+    }
 `
 const RadioGroup = puffin.element(`
     <RadioGroupWrapper> </RadioGroupWrapper>
@@ -63,20 +91,12 @@ const RadioGroup = puffin.element(`
         mounted(target){
             if(target.children[0].tagName == "DIV") return;
             const randomName = Math.random()
-            const tempContent = target.innerHTML;
-            target.innerHTML = `<div>${tempContent}</div>`
-            const radios = target.children[0].children
+            const radios = target.children
             for( const radio of radios){
                 if(radio.tagName == "LABEL"){
-                    radio.innerHTML = `
-                        <input type="radio" name="${randomName}" ${radio.getAttribute("checked")==""?"checked":""} />
-                        <div class="circle"></div>
-                        <p>${radio.textContent}</p>      
-                    `
-                    radio.children[0].onclick = function(e){
-                        const event = new CustomEvent('radioSelected', { detail: {target:radio} });
-                        target.dispatchEvent(event);
-                    }
+                    puffin.render(new Option(randomName,radio,target),radio,{
+                        removeContent:false
+                    })
                 }
                 
             }

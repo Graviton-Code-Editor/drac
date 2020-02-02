@@ -1,7 +1,7 @@
 import  {puffin} from '@mkenzo_8/puffin'
 
 const NavbarWrapper = puffin.style.div`
-    &{
+    & {
         --accentColor:#0180F4;
         --accentLightColor:#53A1EA;
         --textColor:black;
@@ -10,9 +10,10 @@ const NavbarWrapper = puffin.style.div`
         --backgroundColorActive:#155BC5;
         --textColorHovering:black;
         --textColorInAccent:white;
+        --font:Montserrat, sans-serif;
     }
     & *{
-        font-family:Montserrat, sans-serif;
+        font-family:var(--puffinFont,var(--font));
         
     }
     & > a{
@@ -36,6 +37,7 @@ const NavbarWrapper = puffin.style.div`
         background:var(--puffinBackgroundColorHovering,var(--backgroundColorHovering))
     }
 `
+
 const NavBar = puffin.element(`
     <NavbarWrapper> </NavbarWrapper>
 `,{

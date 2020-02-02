@@ -2,12 +2,13 @@ import  {puffin} from '@mkenzo_8/puffin'
 
 const Card = puffin.style.div`
     &{
+        --font:Montserrat, sans-serif;
         --accentColor:#0066FF;
         --secondaryColor:#EFEFEF;
         --disabledColor:#D8D8D8;
         --textColor:black;
         transition:0.1s;
-        font-family:Montserrat, sans-serif;
+        font-family:var(--puffinFont,var(--font));
         padding:10px 20px;
         min-height:30px;
         min-width:30px;
@@ -22,6 +23,7 @@ const Card = puffin.style.div`
         color:var(--puffinTextColor,var(--textColor));
         box-sizing: border-box;
         display:inline-block;
+        overflow:auto;
     }
     &:hover:not(:active){
         cursor:pointer;

@@ -5,6 +5,7 @@ const Text = puffin.style.p`
         --accentColor:#0066FF;
         --secondaryColor:#EFEFEF;
         --textColor:black;
+        --font:Montserrat, sans-serif;
         font-family:Montserrat, sans-serif;
         margin:3px;
         padding:5px;

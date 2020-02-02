@@ -1,10 +1,10 @@
 import { puffin } from '@mkenzo_8/puffin'
-const { Button, RadioGroup, NavBar} = require('../../src/main')
+const { RadioGroup} = require('../../src/main')
 const RadioGroupRouter = puffin.element(`
     <div>
         <RadioGroup radioSelected="$radioSelected">
             <label>Option 1</label>
-            <label checked="">Option 2 (default)</label>
+            <label checked="">Option 2 (default) fffffffffffffffff</label>
             <label>Option 3</label>
         </RadioGroup>
     </div>`,

@@ -2,12 +2,13 @@ import  {puffin} from '@mkenzo_8/puffin'
 
 const Button = puffin.style.button`
     &{
+        --font:Montserrat, sans-serif;
         --accentColor:#0066FF;
         --secondaryColor:#EFEFEF;
         --disabledColor:#D8D8D8;
         --textColor:black;
         transition:0.1s;
-        font-family:Montserrat, sans-serif;
+        font-family:var(--puffinFont,var(--font));
         padding:10px 20px;
         background:var(--secondaryColor);
         border:0;
