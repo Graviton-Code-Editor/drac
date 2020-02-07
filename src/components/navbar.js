@@ -29,17 +29,17 @@ const NavbarWrapper = puffin.style.div`
     }
     & > a.active:active {
         transition:0.07s;
-        background:var(--puffinBackgroundColorActive,var(--backgroundColorActive))
+        background:var(--puffinNavbarBackgroundActive,var(--backgroundColorActive))
     }
     & > a:hover {
         transition:0.07s;
-        color:var(--puffinTextColorHovering,var(--textColorHovering));
-        background:var(--puffinBackgroundColorHovering,var(--backgroundColorHovering))
+        color:var(--puffinNavbarColorHovering,var(--textColorHovering));
+        background:var(--puffinNavbarBackgroundHovering,var(--backgroundColorHovering))
     }
 `
 
 const NavBar = puffin.element(`
-    <NavbarWrapper> </NavbarWrapper>
+    <NavbarWrapper></NavbarWrapper>
 `,{
     events:{
         mounted(target){

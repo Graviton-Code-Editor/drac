@@ -4,7 +4,7 @@ const Card = puffin.style.div`
     &{
         --font:Montserrat, sans-serif;
         --accentColor:#0066FF;
-        --backgroundColor:#EFEFEF;
+        --cardBackground:#EFEFEF;
         --disabledColor:#D8D8D8;
         --textColor:black;
         transition:0.1s;
@@ -14,7 +14,7 @@ const Card = puffin.style.div`
         min-width:30px;
         max-width:300px;
         max-height:300px;
-        background:var(--puffinBackgroundColor),var(--backgroundColor));
+        background:var(--puffinCardBackground),var(--cardBackground));
         border:0;
         outline:0;
         box-shadow:0px 0px 0px 0px rgba(0,0,0,0) ,0 0 0 0px var(--puffinAccent,var(--accentColor)); 

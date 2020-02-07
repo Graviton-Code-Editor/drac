@@ -24,8 +24,9 @@ const RadioGroupWrapper = puffin.style.div`
     &{
         --accentColor:#0180F4;
         --accentLightColor:#53A1EA;
-        --backgroundColor:#EFEFEF;
-        --thirdColor:#CFCFCF;
+        --radioBackground:#EFEFEF;
+        --radioBackgroundHovering:#EFEFEF;
+        --radioCircleBorder:#CFCFCF;
         --textColor:black;
     }
     & .wrapper{
@@ -59,7 +60,7 @@ const RadioGroupWrapper = puffin.style.div`
     }
     & label:hover{
         transition:0.05s;
-        background: var(--puffinBackgroundColor,var(--backgroundColor));
+        background: var(--puffinRadioBackgroundHovering,var(--radioBackgroundHovering));
     }
     & label p{
         margin:0;
@@ -74,9 +75,9 @@ const RadioGroupWrapper = puffin.style.div`
         box-sizing:border-box;
         height:25px;
         width:25px;
-        background: var(--puffinBackgroundColor,var(--backgroundColor));
+        background: var(--puffinRadioBackground,var(--radioBackground));
         border-radius:50px;
-        border:3px solid var(--puffinAccent,var(--thirdColor));
+        border:3px solid var(--puffinRadioCircleBorder,var(--radioCircleBorder));
         margin-right:12px;
     }
     & label:active .circle{

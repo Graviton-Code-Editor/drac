@@ -4,13 +4,13 @@ const Button = puffin.style.button`
     &{
         --font:Montserrat, sans-serif;
         --accentColor:#0066FF;
-        --secondaryColor:#EFEFEF;
+        --buttonBackground:#EFEFEF;
         --disabledColor:#D8D8D8;
         --textColor:black;
         transition:0.1s;
         font-family:var(--puffinFont,var(--font));
         padding:10px 20px;
-        background:var(--secondaryColor);
+        background:var(--puffinButtonBackground,var(--buttonBackground));
         border:0;
         outline:0;
         text-transform: uppercase;
