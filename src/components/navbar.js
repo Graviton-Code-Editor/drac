@@ -25,7 +25,7 @@ const NavbarWrapper = puffin.style.div`
     }
     & > a.active {
         background:var(--puffinAccent,var(--accentColor));
-        color:var(--puffinTextColor,var(--textColorInAccent))
+        color:var(--puffinTextColorInAccent,var(--textColorInAccent))
     }
     & > a.active:active {
         transition:0.07s;

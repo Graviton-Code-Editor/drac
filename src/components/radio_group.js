@@ -2,7 +2,6 @@ import  {puffin} from '@mkenzo_8/puffin'
 
 
 function Option(name,radio,target){
-    console.log(radio)
     const text = radio.textContent
     radio.innerText = ""
     return new puffin.element(`
@@ -25,7 +24,7 @@ const RadioGroupWrapper = puffin.style.div`
     &{
         --accentColor:#0180F4;
         --accentLightColor:#53A1EA;
-        --secondaryColor:#EFEFEF;
+        --backgroundColor:#EFEFEF;
         --thirdColor:#CFCFCF;
         --textColor:black;
     }
@@ -33,6 +32,7 @@ const RadioGroupWrapper = puffin.style.div`
         display:flex;
         left:0;
         width:auto;
+        align-items:center;
     }
     &{
         --font:Montserrat, sans-serif;
@@ -59,12 +59,12 @@ const RadioGroupWrapper = puffin.style.div`
     }
     & label:hover{
         transition:0.05s;
-        background: var(--puffinAccent,var(--secondaryColor));
+        background: var(--puffinBackgroundColor,var(--backgroundColor));
     }
     & label p{
         margin:0;
         white-space:nowrap;
-        color:var(--puffinTextColor);
+        color:var(--puffinTextColor,var(--textColor));
     }
     & label input{
        display:none;
@@ -74,7 +74,7 @@ const RadioGroupWrapper = puffin.style.div`
         box-sizing:border-box;
         height:25px;
         width:25px;
-        background: var(--puffinAccent,var(--secondaryColor));
+        background: var(--puffinBackgroundColor,var(--backgroundColor));
         border-radius:50px;
         border:3px solid var(--puffinAccent,var(--thirdColor));
         margin-right:12px;
