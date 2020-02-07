@@ -24,7 +24,7 @@ const RadioGroupWrapper = puffin.style.div`
     &{
         --accentColor:#0180F4;
         --accentLightColor:#53A1EA;
-        --radioBackground:#EFEFEF;
+        --radioCircleBackground:#EFEFEF;
         --radioBackgroundHovering:#EFEFEF;
         --radioCircleBorder:#CFCFCF;
         --textColor:black;
@@ -75,7 +75,7 @@ const RadioGroupWrapper = puffin.style.div`
         box-sizing:border-box;
         height:25px;
         width:25px;
-        background: var(--puffinRadioBackground,var(--radioBackground));
+        background: var(--puffinRadioCircleBackground,var(--radioCircleBackground));
         border-radius:50px;
         border:3px solid var(--puffinRadioCircleBorder,var(--radioCircleBorder));
         margin-right:12px;

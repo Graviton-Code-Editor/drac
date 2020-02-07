@@ -14,7 +14,7 @@ const Card = puffin.style.div`
         min-width:30px;
         max-width:300px;
         max-height:300px;
-        background:var(--puffinCardBackground),var(--cardBackground));
+        background:var(--puffinCardBackground,var(--cardBackground));
         border:0;
         outline:0;
         box-shadow:0px 0px 0px 0px rgba(0,0,0,0) ,0 0 0 0px var(--puffinAccent,var(--accentColor)); 
