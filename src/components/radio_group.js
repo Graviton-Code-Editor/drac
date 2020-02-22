@@ -23,10 +23,10 @@ function Option(name,radio,target){
 const RadioGroupWrapper = puffin.style.div`
     &{
         --accentColor:#0180F4;
-        --accentLightColor:#53A1EA;
         --radioCircleBackground:#EFEFEF;
         --radioBackgroundHovering:#EFEFEF;
         --radioCircleBorder:#CFCFCF;
+        --radioCircleBorderHovering:#53A1EA;
         --textColor:black;
     }
     & .wrapper{
@@ -82,7 +82,7 @@ const RadioGroupWrapper = puffin.style.div`
     }
     & label:active .circle{
         transition:0.2s;
-        box-shadow:0px 0px 0px 3px var(--puffinAccentLight,var(--accentLightColor));        
+        box-shadow:0px 0px 0px 3px var(--puffinRadioCircleBorderHovering,var(--radioCircleBorderHovering));        
     }
 `
 const RadioGroup = puffin.element(`
