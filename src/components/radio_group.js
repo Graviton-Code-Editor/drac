@@ -44,11 +44,11 @@ const RadioGroupWrapper = puffin.style.div`
         right:0;
         color:var(--puffinTextColor,var(--textColor));
     }
-    & label input:checked ~ .circle{
+    & label[styled="true"] input:checked ~ .circle{
         border: 6px solid var(--puffinAccent,var(--accentColor));
         transition:0.2s;
     }
-    & label {
+    & label[styled="true"] {
         transition:0.05s;
         display:flex;
         padding:5px;
@@ -58,19 +58,19 @@ const RadioGroupWrapper = puffin.style.div`
         border-radius:10px;
         right:0;
     }
-    & label:hover{
+    & label[styled="true"]:hover{
         transition:0.05s;
         background: var(--puffinRadioBackgroundHovering,var(--radioBackgroundHovering));
     }
-    & label p{
+    & label[styled="true"] p{
         margin:0;
         white-space:nowrap;
         color:var(--puffinTextColor,var(--textColor));
     }
-    & label input{
+    & label[styled="true"] input{
        display:none;
     }
-    & label .circle{
+    & label[styled="true"] .circle{
         transition:0.2s;
         box-sizing:border-box;
         height:25px;
@@ -80,7 +80,7 @@ const RadioGroupWrapper = puffin.style.div`
         border:3px solid var(--puffinRadioCircleBorder,var(--radioCircleBorder));
         margin-right:12px;
     }
-    & label:active .circle{
+    & label[styled="true"]:active .circle{
         transition:0.2s;
         box-shadow:0px 0px 0px 3px var(--puffinRadioCircleBorderHovering,var(--radioCircleBorderHovering));        
     }
@@ -95,6 +95,7 @@ const RadioGroup = puffin.element(`
             const radios = target.children
             for( const radio of radios){
                 if(radio.tagName == "LABEL"){
+                 	if(radio.getAttribute("styled") == null) radio.setAttribute("styled","true")
                     puffin.render(new Option(randomName,radio,target),radio,{
                         removeContent:false
                     })
