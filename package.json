@@ -1,15 +1,15 @@
 {
   "name": "@mkenzo_8/puffin-drac",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Drac Design System for PuffinJS",
   "main": "src/main.js",
   "dependencies": {
-    "@mkenzo_8/puffin": "^0.3.4",
+    "@mkenzo_8/puffin": "^0.4.4",
     "parcel": "1.12.4"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "parcel test/index.html"
+    "test": "npx parcel test/index.html"
   },
   "author": "Marc Espín Sanz <mespinsanz@gmail.com>",
   "license": "MIT"

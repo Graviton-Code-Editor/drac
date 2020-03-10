@@ -88,26 +88,26 @@ const RadioGroupWrapper = puffin.style.div`
 const RadioGroup = puffin.element(`
     <RadioGroupWrapper> </RadioGroupWrapper>
 `,{
-    events:{
-        mounted(target){
-            if(target.children[0].tagName == "DIV") return;
-            const randomName = Math.random()
-            const radios = target.children
-            for( const radio of radios){
-                if(radio.tagName == "LABEL"){
-                 	if(radio.getAttribute("styled") == null) radio.setAttribute("styled","true")
-                    puffin.render(new Option(randomName,radio,target),radio,{
-                        removeContent:false
-                    })
-                }
-                
-            }
-           
-        }
-    },
-    components:{
-        RadioGroupWrapper
-    }
+	events:{
+		mounted(target){
+			if(target.children.length > 0){
+				if(target.children[0].tagName == "DIV") return;
+				const randomName = Math.random()
+				const radios = target.children
+				for( const radio of radios){
+					if(radio.tagName == "LABEL"){
+						if(radio.getAttribute("styled") == null) radio.setAttribute("styled","true")
+						puffin.render(new Option(randomName,radio,target),radio,{
+							removeContent:false
+						})
+					}
+				}
+			}
+		}
+	},
+	components:{
+		RadioGroupWrapper
+	}
 })
 
 export default RadioGroup
