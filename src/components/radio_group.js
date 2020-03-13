@@ -2,13 +2,13 @@ import  {puffin} from '@mkenzo_8/puffin'
 
 
 function Option(name,radio,target){
-    const text = radio.textContent
-    radio.innerText = ""
+    const radioContent = radio.innerHTML
+    radio.innerHTML = ""
     return new puffin.element(`
         <div class="wrapper">
             <input click="$selected" type="radio" name="${name}" ${radio.getAttribute("checked")==""?"checked=''":""} />
             <div class="circle"></div>
-            <p>${text}</p> 
+            <p>${radioContent}</p> 
         </div>
     `,{
         methods:{
@@ -31,11 +31,11 @@ const RadioGroupWrapper = puffin.style.div`
     }
     & .wrapper{
         display:flex;
-        left:0;
+
         width:auto;
         align-items:center;
     }
-    &{
+    &[styled=""]{
         --font:Montserrat, sans-serif;
         font-family:var(--puffinFont,var(--font));
         padding:5px;
@@ -43,6 +43,9 @@ const RadioGroupWrapper = puffin.style.div`
         display:inline-block;
         right:0;
         color:var(--puffinTextColor,var(--textColor));
+    }
+    &[direction="vertically"] {
+        display:flex;
     }
     & label[styled="true"] input:checked ~ .circle{
         border: 6px solid var(--puffinAccent,var(--accentColor));
@@ -62,12 +65,17 @@ const RadioGroupWrapper = puffin.style.div`
         transition:0.05s;
         background: var(--puffinRadioBackgroundHovering,var(--radioBackgroundHovering));
     }
-    & label[styled="true"] p{
+    & label p{
         margin:0;
         white-space:nowrap;
+    }
+    & label[styled="true"] p{
         color:var(--puffinTextColor,var(--textColor));
     }
     & label[styled="true"] input{
+       display:none;
+    }
+    & label[hidden-radio="true"] input{
        display:none;
     }
     & label[styled="true"] .circle{
@@ -90,13 +98,17 @@ const RadioGroup = puffin.element(`
 `,{
 	events:{
 		mounted(target){
+			if(target.getAttribute("direction") == null) target.setAttribute("direction","horizontally")
 			if(target.children.length > 0){
 				if(target.children[0].tagName == "DIV") return;
 				const randomName = Math.random()
 				const radios = target.children
 				for( const radio of radios){
 					if(radio.tagName == "LABEL"){
-						if(radio.getAttribute("styled") == null) radio.setAttribute("styled","true")
+						if(radio.getAttribute("styled") == null) {
+							radio.setAttribute("styled","true")
+							if(radio.getAttribute("hidden-radio") == null) radio.setAttribute("hidden-radio","false")
+						}
 						puffin.render(new Option(randomName,radio,target),radio,{
 							removeContent:false
 						})
