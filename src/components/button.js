@@ -18,6 +18,7 @@ const Button = puffin.style.button`
         margin:5px;
         border-radius:5px;
         color:var(--puffinTextColor,var(--textColor));
+        font-size:13px;
     }
     &:hover:not(:active){
         cursor:pointer;
