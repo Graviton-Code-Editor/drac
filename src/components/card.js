@@ -1,6 +1,6 @@
-import  {puffin} from '@mkenzo_8/puffin'
+import { element, style } from '@mkenzo_8/puffin'
 
-const Card = puffin.style.div`
+const CardWrapper = style`
     &{
         --font:Montserrat, sans-serif;
         --accentColor:#0066FF;
@@ -47,4 +47,9 @@ const Card = puffin.style.div`
         background:var(--puffinDisabledColor,var(--disabledColor));
     }
 `
+
+function Card(){
+	return element`<div class="${CardWrapper}"/>`
+}
+
 export default Card

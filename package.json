@@ -1,13 +1,14 @@
 {
 	"name": "@mkenzo_8/puffin-drac",
-	"version": "0.0.17",
+	"version": "0.1.0",
 	"description": "Drac Design System for PuffinJS",
 	"main": "src/main.js",
 	"dependencies": {
-		"@mkenzo_8/puffin": "^0.4.4",
+		"@mkenzo_8/puffin": "^0.6.2"
+	},
+	"devDependencies": {
 		"parcel": "1.12.4"
 	},
-	"devDependencies": {},
 	"scripts": {
 		"test": "npx parcel test/index.html"
 	},

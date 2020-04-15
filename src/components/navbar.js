@@ -1,6 +1,6 @@
-import  {puffin} from '@mkenzo_8/puffin'
+import  { style, element } from '@mkenzo_8/puffin'
 
-const NavbarWrapper = puffin.style.div`
+const NavbarWrapper = style`
     & {
         --accentColor:#0180F4;
         --accentLightColor:#53A1EA;
@@ -31,34 +31,30 @@ const NavbarWrapper = puffin.style.div`
         transition:0.07s;
         background:var(--puffinNavbarBackgroundActive,var(--backgroundColorActive))
     }
-    & > a:hover {
+    & > a:not(.active):hover {
         transition:0.07s;
         color:var(--puffinNavbarColorHovering,var(--textColorHovering));
         background:var(--puffinNavbarBackgroundHovering,var(--backgroundColorHovering))
     }
 `
 
-const NavBar = puffin.element(`
-    <NavbarWrapper></NavbarWrapper>
-`,{
-    events:{
-        mounted(target){
-            const radios = target.children
-            for( const radio of radios){
-                radio.onclick = function(e){
-                    for( const radio2 of radios){
-                        radio2.classList.remove("active")
-                    }
-                    radio.classList.add("active")
-                }
-                
-            }
-           
-        }
-    },
-    components:{
-        NavbarWrapper
-    }
-})
+function mounted(){
+	const radios = this.children
+	for( const radio of radios){
+		radio.onclick = function(e){
+			for( const radio2 of radios){
+				radio2.classList.remove("active")
+			}
+			radio.classList.add("active")
+		}
+	}
+}
+
+function NavBar(){
+	return element`
+		<div class="${NavbarWrapper	}" mounted="${mounted}></div>
+	`
+}
+
 
 export default NavBar

@@ -1,6 +1,6 @@
-import  {puffin} from '@mkenzo_8/puffin'
+import  {element,style} from '@mkenzo_8/puffin'
 
-const h1 = puffin.style.h1`
+const h1Wrapper = style`
     &{
         --textColor:black;
         --font:Montserrat, sans-serif;
@@ -11,7 +11,7 @@ const h1 = puffin.style.h1`
         color:var(--puffinTextColor,var(--textColor));
     }
 `
-const h2 = puffin.style.h2`
+const h2Wrapper = style`
     &{
         --textColor:black;
         --font:Montserrat, sans-serif;
@@ -22,7 +22,7 @@ const h2 = puffin.style.h2`
         color:var(--puffinTextColor,var(--textColor));
     }
 `
-const h3 = puffin.style.h3`
+const h3Wrapper = style`
     &{
         --textColor:black;
         --font:Montserrat, sans-serif;
@@ -34,7 +34,7 @@ const h3 = puffin.style.h3`
     }
 `
 
-const h4 = puffin.style.h4`
+const h4Wrapper = style`
     &{
         --textColor:black;
         --font:Montserrat, sans-serif;
@@ -45,7 +45,7 @@ const h4 = puffin.style.h4`
         color:var(--puffinTextColor,var(--textColor));
     }
 `
-const h5 = puffin.style.h5`
+const h5Wrapper = style`
     &{
         --textColor:black;
         --font:Montserrat, sans-serif;
@@ -56,7 +56,7 @@ const h5 = puffin.style.h5`
         color:var(--puffinTextColor,var(--textColor));
     }
 `
-const h6 = puffin.style.h6`
+const h6Wrapper = style`
     &{
         --textColor:black;
         --font:Montserrat, sans-serif;
@@ -67,6 +67,25 @@ const h6 = puffin.style.h6`
         color:var(--puffinTextColor,var(--textColor));
     }
 `
+function h1(){
+	return element`<h1 class="${h1Wrapper}"/>`
+}
+function h2(){
+	return element`<h2 class="${h1Wrapper}"/>`
+}
+function h3(){
+	return element`<h3 class="${h1Wrapper}"/>`
+}
+function h4(){
+	return element`<h4 class="${h1Wrapper}"/>`
+}
+function h5(){
+	return element`<h5 class="${h1Wrapper}"/>`
+}
+function h6(){
+	return element`<h6 class="${h1Wrapper}"/>`
+}
+
 const Titles = {
     h1,
     h2,

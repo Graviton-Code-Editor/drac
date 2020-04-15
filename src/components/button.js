@@ -1,6 +1,6 @@
-import  {puffin} from '@mkenzo_8/puffin'
+import  { style, element } from '@mkenzo_8/puffin'
 
-const Button = puffin.style.button`
+const ButtonWrapper = style`
     &{
         --font:Montserrat, sans-serif;
         --accentColor:#0066FF;
@@ -36,4 +36,9 @@ const Button = puffin.style.button`
         background:var(--puffinDisabledColor,var(--disabledColor));
     }
 `
+
+function Button(){
+	return element`<button class=" ${()=>ButtonWrapper} ${()=>ButtonWrapper}"/>`
+}
+
 export default Button

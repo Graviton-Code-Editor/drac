@@ -6,6 +6,8 @@
 * Button
 * Radio Group
 * NavBar
+* Text
+* H1...H6 titles
 
 ## ⚠ Warning
 I do not consider myself an UI designer.

@@ -1,33 +1,52 @@
-import {puffin} from '@mkenzo_8/puffin'
-import Router from './router'
+import { element, render, routerBox, routerLink } from '@mkenzo_8/puffin'
 
-const { Button, RadioGroup, NavBar} = require('../src/main')
+const { NavBar} = require('../src/main')
 
-const App = puffin.element(`
-    <div>
-        <NavBar>
-            <routerLink class="active" path="/">Home</routerLink>
-            <routerLink path="/buttons">Buttons</routerLink>
-            <routerLink path="/radio_group">Radio Groups</routerLink>
-            <routerLink path="/text">Text</routerLink>
-            <routerLink path="/card">Cards</routerLink>
-        </NavBar>
-        <routerBox/>
-    </div>
-`,{
-    methods:{
-        radioSelected(e){
-            console.log(e.detail.target)
-        }
-    },
-    components:{
-        Button,
-        RadioGroup,
-        NavBar,
-        routerBox:Router.box,
-        routerLink:Router.link
-    }
-})
+import HomeRoute from './routes/home'
+import RadioGroupRoute from './routes/radio_groups'
+import ButtonsRoute from './routes/buttons'
+import TextRoute from './routes/text'
+import CardRoute from './routes/card'
 
+const App = element({
+	components:{
+		NavBar,
+		routerBox,
+		routerLink,
+		RadioGroupRoute,
+		ButtonsRoute,
+		TextRoute,
+		CardRoute,
+		HomeRoute
+	}
+})`
+	<div>
+		<NavBar>
+			<routerLink group="home" to="/home">Home</routerLink>
+			<routerLink group="home" to="/radio_group">Radio group</routerLink>
+			<routerLink group="home" to="/button">Button</routerLink>
+			<routerLink group="home" to="/text">Text</routerLink>
+			<routerLink group="home" to="/card">Card</routerLink>
+		</NavBar>
+		<routerBox group="home">
+			<div from="/home">
+				<HomeRoute/>
+			</div>
+			<div from="/radio_group">
+				<RadioGroupRoute/>
+			</div>
+			<div from="/button">
+				<ButtonsRoute/>
+			</div>
+			<div from="/text">
+				<TextRoute/>
+			</div>
+			<div from="/card">
+				<CardRoute/>
+			</div>
+		</routerBox>
+		
+	</div>
+`
 
-puffin.render(App,document.getElementById("app"))
+render(App,document.getElementById("app"))

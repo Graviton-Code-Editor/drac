@@ -1,26 +1,26 @@
-import  {puffin} from '@mkenzo_8/puffin'
+import  { element, style, render } from '@mkenzo_8/puffin'
 
 
 function Option(name,radio,target){
     const radioContent = radio.innerHTML
     radio.innerHTML = ""
-    return new puffin.element(`
-        <div class="wrapper">
-            <input click="$selected" type="radio" name="${name}" ${radio.getAttribute("checked")==""?"checked=''":""} />
-            <div class="circle"></div>
-            <p>${radioContent}</p> 
-        </div>
-    `,{
-        methods:{
-            selected(){
-                const event = new CustomEvent('radioSelected', { detail: {target:radio} });
-                target.dispatchEvent(event);
-            }
-        }
-    })
+	function selected(){
+		const event = new CustomEvent('radioSelected', { detail: {target:radio} });
+		target.dispatchEvent(event);
+	}
+
+
+    return element`
+		<div class="wrapper">
+			<input :click="${selected}" type="radio" name="${name}" checked="${radio.getAttribute("checked")}"></input>
+			<div class="circle"></div>
+			<p>${radioContent}</p> 
+		</div>
+    `
+	
 }
 
-const RadioGroupWrapper = puffin.style.div`
+const RadioGroupWrapper = style`
     &{
         --accentColor:#0180F4;
         --radioCircleBackground:#EFEFEF;
@@ -31,11 +31,10 @@ const RadioGroupWrapper = puffin.style.div`
     }
     & .wrapper{
         display:flex;
-
         width:auto;
         align-items:center;
     }
-    &[styled=""]{
+    &[styled="true"]{
         --font:Montserrat, sans-serif;
         font-family:var(--puffinFont,var(--font));
         padding:5px;
@@ -71,6 +70,7 @@ const RadioGroupWrapper = puffin.style.div`
     }
     & label[styled="true"] p{
         color:var(--puffinTextColor,var(--textColor));
+        font-family:var(--puffinFont,var(--font));
     }
     & label[styled="true"] input{
        display:none;
@@ -93,33 +93,28 @@ const RadioGroupWrapper = puffin.style.div`
         box-shadow:0px 0px 0px 3px var(--puffinRadioCircleBorderHovering,var(--radioCircleBorderHovering));        
     }
 `
-const RadioGroup = puffin.element(`
-    <RadioGroupWrapper> </RadioGroupWrapper>
-`,{
-	events:{
-		mounted(target){
-			if(target.getAttribute("direction") == null) target.setAttribute("direction","horizontally")
-			if(target.children.length > 0){
-				if(target.children[0].tagName == "DIV") return;
-				const randomName = Math.random()
-				const radios = target.children
-				for( const radio of radios){
-					if(radio.tagName == "LABEL"){
-						if(radio.getAttribute("styled") == null) {
-							radio.setAttribute("styled","true")
-							if(radio.getAttribute("hidden-radio") == null) radio.setAttribute("hidden-radio","false")
-						}
-						puffin.render(new Option(randomName,radio,target),radio,{
-							removeContent:false
-						})
-					}
+function mounted(){
+	const target = this
+	if(target.getAttribute("direction") == null) target.setAttribute("direction","horizontally")
+	if(target.getAttribute("styled") == null) target.setAttribute("styled","true")
+	if(target.children.length > 0){
+		if(target.children[0].tagName == "DIV") return;
+		const randomName = Math.random()
+		const radios = target.children
+		for( const radio of radios){
+			if(radio.tagName == "LABEL"){
+				if(radio.getAttribute("styled") == null) {
+					radio.setAttribute("styled","true")
+					if(radio.getAttribute("hidden-radio") == null) radio.setAttribute("hidden-radio","false")
 				}
+				render(new Option(randomName,radio,target),radio)
 			}
 		}
-	},
-	components:{
-		RadioGroupWrapper
 	}
-})
+}
+function RadioGroup(){
+	return element`<div mounted="${mounted}" class="${()=>RadioGroupWrapper}"></div>`
+}
+
 
 export default RadioGroup
