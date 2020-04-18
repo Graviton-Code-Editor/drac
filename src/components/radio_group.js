@@ -3,18 +3,27 @@ import  { element, style, render } from '@mkenzo_8/puffin'
 
 function Option(name,radio,target){
     const radioContent = radio.innerHTML
+	const radioText = radio.innerText
     radio.innerHTML = ""
 	function selected(){
 		const event = new CustomEvent('radioSelected', { detail: {target:radio} });
 		target.dispatchEvent(event);
 	}
-
-
-    return element`
+	function mounted(){
+		if( radioContent == radioText ){
+			this.innerText = radioContent
+		}else{
+			this.innerHTML = radioContent
+		}
+		if( radio.getAttribute("checked") == "true" ){
+			this.parentElement.children[0].setAttribute("checked","")
+		}
+	}
+	return element`
 		<div class="wrapper">
-			<input :click="${selected}" type="radio" name="${name}" checked="${radio.getAttribute("checked")}"></input>
+			<input :click="${selected}" type="radio" name="${name}"></input>
 			<div class="circle"></div>
-			<p>${radioContent}</p> 
+			<p mounted="${mounted}"></p> 
 		</div>
     `
 	
@@ -99,21 +108,24 @@ function mounted(){
 	if(target.getAttribute("styled") == null) target.setAttribute("styled","true")
 	if(target.children.length > 0){
 		if(target.children[0].tagName == "DIV") return;
-		const randomName = Math.random()
 		const radios = target.children
+		const randomName = Math.random()
 		for( const radio of radios){
 			if(radio.tagName == "LABEL"){
 				if(radio.getAttribute("styled") == null) {
 					radio.setAttribute("styled","true")
 					if(radio.getAttribute("hidden-radio") == null) radio.setAttribute("hidden-radio","false")
+					render(new Option(randomName,radio,target),radio)
+				}else{
+					render(new Option(randomName,radio,target),radio)
 				}
-				render(new Option(randomName,radio,target),radio)
+				
 			}
 		}
 	}
 }
 function RadioGroup(){
-	return element`<div mounted="${mounted}" class="${()=>RadioGroupWrapper}"></div>`
+	return element`<div mounted="${mounted}" class="${RadioGroupWrapper}"></div>`
 }
 
 

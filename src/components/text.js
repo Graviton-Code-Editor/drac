@@ -11,7 +11,7 @@ const TextWrapper = style`
 	padding:5px;
 	color:var(--puffinTextColor,var(--textColor));
 	font-weight:normal;
-	font-size:13px;
+	font-size:15px;
 	}
 `
 

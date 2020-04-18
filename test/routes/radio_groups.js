@@ -13,7 +13,7 @@ function RadioGroupRoute () {
 		<div>
 			<RadioGroup :radioSelected="${radioSelected}">
 				<label>Option 1</label>
-				<label checked="">Option 2 (default)</label>
+				<label checked="true">Option 2 (default)</label>
 				<label>Option 3</label>
 				<label styled="false">Not styled radio</label>
 			</RadioGroup>
