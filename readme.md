@@ -19,6 +19,12 @@ Super alpha. WIP.
 
 Check the test [project](https://github.com/Graviton-Code-Editor/drac/tree/master/test)
 
+### Usage
+
+`shell 
+npm test
+`
+
 ### 🎈 About
 
 Drac is the Design system used in Graviton. This packages is a set of [PuffinJS](https://github.com/PuffinJS/puffin) components.

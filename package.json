@@ -10,7 +10,7 @@
 		"parcel": "1.12.4"
 	},
 	"scripts": {
-		"test": "npx parcel test/index.html"
+		"test": "parcel test/index.html"
 	},
 	"author": "Marc Espín Sanz <mespinsanz@gmail.com>",
 	"license": "MIT"
