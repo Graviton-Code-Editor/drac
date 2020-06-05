@@ -28,7 +28,7 @@ const App = element({
 			<routerLink group="home" to="/text">Text</routerLink>
 			<routerLink group="home" to="/card">Card</routerLink>
 		</NavBar>
-		<routerBox group="home">
+		<routerBox group="home" default="/home">
 			<div from="/home">
 				<HomeRoute/>
 			</div>

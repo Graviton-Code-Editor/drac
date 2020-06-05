@@ -1,71 +1,71 @@
-import  {element,style} from '@mkenzo_8/puffin'
+import { element,style } from '@mkenzo_8/puffin'
 
 const h1Wrapper = style`
-    &{
-        --textColor:black;
-        --font:Montserrat, sans-serif;
-        font-family:var(--puffinFont,var(--font));
-        margin:3px;
-        margin-bottom:10px; 
-        padding:5px;
-        color:var(--puffinTextColor,var(--textColor));
-    }
+	&{
+		--textColor:black;
+		--font:Montserrat, sans-serif;
+		font-family:var(--puffinFont,var(--font));
+		margin:3px;
+		margin-bottom:10px; 
+		padding:5px;
+		color:var(--puffinTextColor,var(--textColor));
+	}
 `
 const h2Wrapper = style`
-    &{
-        --textColor:black;
-        --font:Montserrat, sans-serif;
-        font-family:var(--puffinFont,var(--font));
-        margin:3px;
-        margin-bottom:8px; 
-        padding:5px;
-        color:var(--puffinTextColor,var(--textColor));
-    }
+	&{
+		--textColor:black;
+		--font:Montserrat, sans-serif;
+		font-family:var(--puffinFont,var(--font));
+		margin:3px;
+		margin-bottom:8px; 
+		padding:5px;
+		color:var(--puffinTextColor,var(--textColor));
+	}
 `
 const h3Wrapper = style`
-    &{
-        --textColor:black;
-        --font:Montserrat, sans-serif;
-        font-family:var(--puffinFont,var(--font));
-        margin:3px;
-        margin-bottom:6px; 
-        padding:5px;
-        color:var(--puffinTextColor,var(--textColor));
-    }
+	&{
+		--textColor:black;
+		--font:Montserrat, sans-serif;
+		font-family:var(--puffinFont,var(--font));
+		margin:3px;
+		margin-bottom:6px; 
+		padding:5px;
+		color:var(--puffinTextColor,var(--textColor));
+	}
 `
 
 const h4Wrapper = style`
-    &{
-        --textColor:black;
-        --font:Montserrat, sans-serif;
-        font-family:var(--puffinFont,var(--font));
-        margin:3px;
-        margin-bottom:6px; 
-        padding:5px;
-        color:var(--puffinTextColor,var(--textColor));
-    }
+	&{
+		--textColor:black;
+		--font:Montserrat, sans-serif;
+		font-family:var(--puffinFont,var(--font));
+		margin:3px;
+		margin-bottom:6px; 
+		padding:5px;
+		color:var(--puffinTextColor,var(--textColor));
+	}
 `
 const h5Wrapper = style`
-    &{
-        --textColor:black;
-        --font:Montserrat, sans-serif;
-        font-family:var(--puffinFont,var(--font));
-        margin:3px;
-        margin-bottom:6px; 
-        padding:5px;
-        color:var(--puffinTextColor,var(--textColor));
-    }
+	&{
+		--textColor:black;
+		--font:Montserrat, sans-serif;
+		font-family:var(--puffinFont,var(--font));
+		margin:3px;
+		margin-bottom:6px; 
+		padding:5px;
+		color:var(--puffinTextColor,var(--textColor));
+	}
 `
 const h6Wrapper = style`
-    &{
-        --textColor:black;
-        --font:Montserrat, sans-serif;
-        font-family:var(--puffinFont,var(--font));
-        margin:3px;
-        margin-bottom:6px; 
-        padding:5px;
-        color:var(--puffinTextColor,var(--textColor));
-    }
+	&{
+		--textColor:black;
+		--font:Montserrat, sans-serif;
+		font-family:var(--puffinFont,var(--font));
+		margin:3px;
+		margin-bottom:6px; 
+		padding:5px;
+		color:var(--puffinTextColor,var(--textColor));
+	}
 `
 function h1(){
 	return element`<h1 class="${h1Wrapper}"/>`
@@ -87,11 +87,11 @@ function h6(){
 }
 
 const Titles = {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6
 }
 export default Titles

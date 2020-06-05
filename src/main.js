@@ -5,11 +5,11 @@ import Text from './components/text'
 import Titles from './components/title'
 import Card from './components/card'
 
-module.exports = {
-    Button,
-    RadioGroup,
-    NavBar,
-    Text,
-    Titles,
-    Card
+export {
+	Button,
+	RadioGroup,
+	NavBar,
+	Text,
+	Titles,
+	Card
 }
