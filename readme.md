@@ -34,6 +34,6 @@ I do not consider myself an UI designer.
 
 ## 🤔Testing
 
-`shell 
+```shell 
 npm test
-`
+```
