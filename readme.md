@@ -14,7 +14,7 @@ Drac is the Design system used in Graviton. This packages is a set of [PuffinJS]
 
 ## 🍜 Usage
 
-`javascript 
+```javascript 
 import { element } from '@mkenzo_8/puffin'
 import { Button } from '@mkenzo_8/puffin-drac'
 
@@ -27,7 +27,7 @@ const helloButton = () => {
 		<Button>Hello World</Button>
 	`
 }
-`
+```
 
 ## ⚠ Warning
 I do not consider myself an UI designer.
