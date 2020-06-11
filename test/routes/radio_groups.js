@@ -1,5 +1,5 @@
 import { element } from '@mkenzo_8/puffin'
-const { RadioGroup} = require('../../src/main')
+import { RadioGroup} from '../../src/main'
 
 function RadioGroupRoute () {
 	function radioSelected(e){

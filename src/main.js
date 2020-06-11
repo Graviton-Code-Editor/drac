@@ -4,6 +4,7 @@ import NavBar from './components/navbar'
 import Text from './components/text'
 import Titles from './components/title'
 import Card from './components/card'
+import Input from './components/input'
 
 export {
 	Button,
@@ -11,5 +12,6 @@ export {
 	NavBar,
 	Text,
 	Titles,
-	Card
+	Card,
+	Input
 }

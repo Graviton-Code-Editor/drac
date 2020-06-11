@@ -1,6 +1,5 @@
 import { element } from '@mkenzo_8/puffin'
-
-const { Text } = require('../../src/main')
+import { Text } from '../../src/main'
 
 function HomeRoute(){
 	return element({

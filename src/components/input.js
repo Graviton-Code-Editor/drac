@@ -1,35 +1,31 @@
 import  { style, element } from '@mkenzo_8/puffin'
 
-const ButtonWrapper = style`
+const InputWrapper = style`
 	&{
 		--font:Montserrat, sans-serif;
 		--accentColor:#0066FF;
-		--buttonBackground:#EFEFEF;
+		--inputBackground:#EFEFEF;
 		--disabledColor:#D8D8D8;
 		--textColor:black;
+		--inputBorder:#CFCFCF;
 		transition:0.1s;
 		font-family:var(--puffinFont,var(--font));
-		padding:10px 20px;
-		background:var(--puffinButtonBackground,var(--buttonBackground));
+		padding:8px 10px;
+		background:var(--puffinInputBackground,var(--inputBackground));
 		border:0;
 		outline:0;
-		text-transform: uppercase;
-		box-shadow:0px 0px 0px 0px rgba(0,0,0,0) ,0 0 0 0px var(--puffinAccent,var(--accentColor)); 
+		box-shadow:0px 0px 0px 0px rgba(0,0,0,0) ,0 0 0 0px var(--puffinInputBorder,var(--inputBorder)); 
 		margin:5px;
 		border-radius:5px;
 		color:var(--puffinTextColor,var(--textColor));
 		font-size:13px;
 	}
-	&:hover:not(:active){
-		cursor:pointer;
+	&:focus{
 		transition:0.1s;
-		box-shadow:0px 1px 5px 2px rgba(0,0,0,.05) ,0 0 0 0px var(--puffinAccent,var(--accentColor));  
-	}
-	&:active{
+		box-shadow:0px 1px 5px 2px rgba(0,0,0,.05) ,0 0 0 3px var(--puffinInputBorder,var(--inputBorder));  
 		border:0;
 		outline:0;
 		box-sizing: border-box;
-		box-shadow:0px 1px 5px 3px rgba(0,0,0,.05) ,0 0 0 3px var(--puffinAccent,var(--accentColor));  
 	}
 	&.disabled{
 		pointer-events: none;
@@ -38,7 +34,7 @@ const ButtonWrapper = style`
 `
 
 function Button(){
-	return element`<button class="${ButtonWrapper}"/>`
+	return element`<input class="${InputWrapper}"/>`
 }
 
 export default Button

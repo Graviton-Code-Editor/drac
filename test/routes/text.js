@@ -1,18 +1,17 @@
 import { element } from '@mkenzo_8/puffin'
-
-const { Text , Titles } = require('../../src/main')
+import { Text , Titles } from '../../src/main'
 
 function TextRoute(){
 	return element({
-		 components:{
-            Text,
-            H1:Titles.h1,
-            H2:Titles.h2,
-            H3:Titles.h3,
-            H4:Titles.h4,
-            H5:Titles.h5,
-            H6:Titles.h6
-        }
+		components:{
+			Text,
+			H1:Titles.h1,
+			H2:Titles.h2,
+			H3:Titles.h3,
+			H4:Titles.h4,
+			H5:Titles.h5,
+			H6:Titles.h6
+		}
 	})`
 	<div>
 		<H1>This is an H1</H1>

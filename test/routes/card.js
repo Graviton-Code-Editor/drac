@@ -1,5 +1,5 @@
 import { element } from '@mkenzo_8/puffin'
-const { Card } = require('../../src/main')
+import { Card } from '../../src/main'
 
 function CardRoute(){
 	return element({

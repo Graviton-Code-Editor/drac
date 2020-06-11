@@ -1,12 +1,12 @@
 import { element, render, routerBox, routerLink } from '@mkenzo_8/puffin'
 
-const { NavBar} = require('../src/main')
-
+import { NavBar } from '../src/main'
 import HomeRoute from './routes/home'
 import RadioGroupRoute from './routes/radio_groups'
 import ButtonsRoute from './routes/buttons'
 import TextRoute from './routes/text'
 import CardRoute from './routes/card'
+import InputRoute from './routes/input'
 
 const App = element({
 	components:{
@@ -17,7 +17,8 @@ const App = element({
 		ButtonsRoute,
 		TextRoute,
 		CardRoute,
-		HomeRoute
+		HomeRoute,
+		InputRoute
 	}
 })`
 	<div>
@@ -27,6 +28,7 @@ const App = element({
 			<routerLink group="home" to="/button">Button</routerLink>
 			<routerLink group="home" to="/text">Text</routerLink>
 			<routerLink group="home" to="/card">Card</routerLink>
+			<routerLink group="home" to="/input">Input</routerLink>
 		</NavBar>
 		<routerBox group="home" default="/home">
 			<div from="/home">
@@ -43,6 +45,9 @@ const App = element({
 			</div>
 			<div from="/card">
 				<CardRoute/>
+			</div>
+			<div from="/input">
+				<InputRoute/>
 			</div>
 		</routerBox>
 		
