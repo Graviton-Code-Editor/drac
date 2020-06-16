@@ -1,6 +1,5 @@
 import  { element, style, render } from '@mkenzo_8/puffin'
 
-
 function Option(name,radio,target){
 	const radioContent = radio.innerHTML
 	const radioText = radio.innerText
@@ -25,8 +24,8 @@ function Option(name,radio,target){
 			<div class="circle"></div>
 			<p mounted="${mounted}"></p> 
 		</div>
-	`
-
+    `
+	
 }
 
 const RadioGroupWrapper = style`
@@ -37,6 +36,7 @@ const RadioGroupWrapper = style`
 		--radioCircleBorder:#CFCFCF;
 		--radioCircleBorderHovering:#53A1EA;
 		--textColor:black;
+		font-size: 13px;
 	}
 	& .wrapper{
 		display:flex;
@@ -46,7 +46,7 @@ const RadioGroupWrapper = style`
 	&[styled="true"]{
 		--font:Montserrat, sans-serif;
 		font-family:var(--puffinFont,var(--font));
-		padding:5px;
+		padding:2px 5px;
 		margin:3px;
 		display:inline-block;
 		right:0;
@@ -56,7 +56,7 @@ const RadioGroupWrapper = style`
 		display:flex;
 	}
 	& label[styled="true"] input:checked ~ .circle{
-		border: 6px solid var(--puffinAccent,var(--accentColor));
+		border: 5px solid var(--puffinAccent,var(--accentColor));
 		transition:0.2s;
 	}
 	& label[styled="true"] {
@@ -90,16 +90,16 @@ const RadioGroupWrapper = style`
 	& label[styled="true"] .circle{
 		transition:0.2s;
 		box-sizing:border-box;
-		height:25px;
-		width:25px;
+		height:21px;
+		width:21px;
 		background: var(--puffinRadioCircleBackground,var(--radioCircleBackground));
 		border-radius:50px;
-		border:3px solid var(--puffinRadioCircleBorder,var(--radioCircleBorder));
-		margin-right:12px;
+		border:2px solid var(--puffinRadioCircleBorder,var(--radioCircleBorder));
+		margin-right:10px;
 	}
 	& label[styled="true"]:active .circle{
 		transition:0.2s;
-		box-shadow:0px 0px 0px 3px var(--puffinRadioCircleBorderHovering,var(--radioCircleBorderHovering));        
+		box-shadow:0px 0px 0px 2px var(--puffinRadioCircleBorderHovering,var(--radioCircleBorderHovering));        
 	}
 `
 function mounted(){
@@ -119,6 +119,7 @@ function mounted(){
 				}else{
 					render(new Option(randomName,radio,target),radio)
 				}
+				
 			}
 		}
 	}
