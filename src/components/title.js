@@ -71,19 +71,19 @@ function h1(){
 	return element`<h1 class="${h1Wrapper}"/>`
 }
 function h2(){
-	return element`<h2 class="${h1Wrapper}"/>`
+	return element`<h2 class="${h2Wrapper}"/>`
 }
 function h3(){
-	return element`<h3 class="${h1Wrapper}"/>`
+	return element`<h3 class="${h3Wrapper}"/>`
 }
 function h4(){
-	return element`<h4 class="${h1Wrapper}"/>`
+	return element`<h4 class="${h4Wrapper}"/>`
 }
 function h5(){
-	return element`<h5 class="${h1Wrapper}"/>`
+	return element`<h5 class="${h5Wrapper}"/>`
 }
 function h6(){
-	return element`<h6 class="${h1Wrapper}"/>`
+	return element`<h6 class="${h6Wrapper}"/>`
 }
 
 const Titles = {
