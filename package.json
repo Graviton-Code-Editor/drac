@@ -1,10 +1,10 @@
 {
 	"name": "@mkenzo_8/puffin-drac",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"description": "Drac Design System for PuffinJS",
 	"main": "src/main.js",
 	"dependencies": {
-		"@mkenzo_8/puffin": "^0.9.9"
+		"@mkenzo_8/puffin": "^1.0.3"
 	},
 	"devDependencies": {
 		"core-js-compat": "^3.4.7",
