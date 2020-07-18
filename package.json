@@ -4,7 +4,8 @@
 	"description": "Drac Design System for PuffinJS",
 	"main": "src/main.js",
 	"dependencies": {
-		"@mkenzo_8/puffin": "^1.0.3"
+		"@mkenzo_8/puffin": "^1.0.3",
+		"lodash": "^4.17.19"
 	},
 	"devDependencies": {
 		"core-js-compat": "^3.4.7",
