@@ -1,5 +1,5 @@
 import { element } from '@mkenzo_8/puffin'
-import { Card } from '../../src/main'
+import { Card } from '../../src/index'
 
 function CardRoute(){
 	return element({

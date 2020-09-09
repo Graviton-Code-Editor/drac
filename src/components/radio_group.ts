@@ -30,7 +30,7 @@ function Option(name,radio,target){
 
 const RadioGroupWrapper = style`
 	&{
-		--accentColor:#0180F4;
+		--radioAccentColor:#0180F4;
 		--radioCircleBackground:#EFEFEF;
 		--radioBackgroundHovering:#EFEFEF;
 		--radioCircleBorder:#CFCFCF;
@@ -56,7 +56,7 @@ const RadioGroupWrapper = style`
 		display:flex;
 	}
 	& label[styled="true"] input:checked ~ .circle{
-		border: 5px solid var(--puffinAccent,var(--accentColor));
+		border: 5px solid var(--puffinAccent,var(--radioAccentColor));
 		transition:0.2s;
 	}
 	& label[styled="true"] {
@@ -115,9 +115,9 @@ function mounted(){
 				if(radio.getAttribute("styled") == null) {
 					radio.setAttribute("styled","true")
 					if(radio.getAttribute("hidden-radio") == null) radio.setAttribute("hidden-radio","false")
-					render(new Option(randomName,radio,target),radio)
+					render(Option(randomName,radio,target),radio)
 				}else{
-					render(new Option(randomName,radio,target),radio)
+					render(Option(randomName,radio,target),radio)
 				}
 				
 			}

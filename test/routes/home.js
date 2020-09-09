@@ -1,5 +1,5 @@
 import { element } from '@mkenzo_8/puffin'
-import { Text } from '../../src/main'
+import { Text } from '../../src/index'
 
 function HomeRoute(){
 	return element({

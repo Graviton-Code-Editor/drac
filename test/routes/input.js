@@ -1,5 +1,5 @@
 import { element } from '@mkenzo_8/puffin'
-import { Input } from '../../src/main'
+import { Input } from '../../src/index'
 
 function InputRoute(){
 	return element({

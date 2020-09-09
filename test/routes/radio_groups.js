@@ -1,5 +1,5 @@
 import { element } from '@mkenzo_8/puffin'
-import { RadioGroup} from '../../src/main'
+import { RadioGroup} from '../../src/index'
 
 function RadioGroupRoute () {
 	function radioSelected(e){

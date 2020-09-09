@@ -1,5 +1,5 @@
 import { element } from '@mkenzo_8/puffin'
-import { Text , Titles } from '../../src/main'
+import { Text , Titles } from '../../src/index'
 
 function TextRoute(){
 	return element({

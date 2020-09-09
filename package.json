@@ -1,17 +1,21 @@
 {
 	"name": "@mkenzo_8/puffin-drac",
-	"version": "0.1.5",
+	"version": "0.1.6",
 	"description": "Drac Design System for PuffinJS",
-	"main": "src/main.js",
+	"main": "bin/index.js",
 	"dependencies": {
-		"@mkenzo_8/puffin": "^1.0.3"
+		"@mkenzo_8/puffin": "^1.1.0"
 	},
 	"devDependencies": {
-		"core-js-compat": "^3.4.7",
-		"parcel": "1.12.4"
+		"parcel": "^1.12.4",
+		"ts-loader": "^8.0.3",
+		"typescript": "^4.0.2",
+		"webpack": "^4.44.1",
+		"webpack-cli": "^3.3.12"
 	},
 	"scripts": {
-		"test": "parcel test/index.html"
+		"test": "parcel test/index.html",
+		"build": "webpack"
 	},
 	"author": "Marc Espín Sanz <mespinsanz@gmail.com>",
 	"license": "MIT"

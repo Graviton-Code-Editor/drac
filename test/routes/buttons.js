@@ -1,5 +1,5 @@
 import { element } from '@mkenzo_8/puffin'
-import { Button } from '../../src/main'
+import { Button } from '../../src/index'
 
 function ButtonsRouter() {
 	return element({

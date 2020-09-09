@@ -3,7 +3,6 @@ import  { style, element } from '@mkenzo_8/puffin'
 const InputWrapper = style`
 	&{
 		--font:Montserrat, sans-serif;
-		--accentColor:#0066FF;
 		--inputBackground:#EFEFEF;
 		--disabledColor:#D8D8D8;
 		--textColor:black;

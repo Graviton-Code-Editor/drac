@@ -2,7 +2,7 @@ import  { style, element } from '@mkenzo_8/puffin'
 
 const NavbarWrapper = style`
 	& {
-		--accentColor:#0180F4;
+		--navbarAccentColor:#0180F4;
 		--accentLightColor:#53A1EA;
 		--textColor:black;
 		--backgroundColor:transparent;
@@ -23,7 +23,7 @@ const NavbarWrapper = style`
 		cursor:pointer;
 	}
 	& > a.active {
-		background:var(--puffinAccent,var(--accentColor));
+		background:var(--puffinAccent,var(--navbarAccentColor));
 		color:var(--puffinTextColorInAccent,var(--textColorInAccent))
 	}
 	& > a.active:active {

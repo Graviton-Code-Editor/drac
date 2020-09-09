@@ -3,7 +3,7 @@ import { element, style } from '@mkenzo_8/puffin'
 const CardWrapper = style`
 	&{
 		--font:Montserrat, sans-serif;
-		--accentColor:#0066FF;
+		--cardAccentColor:#0066FF;
 		--cardBackground:#EFEFEF;
 		--disabledColor:#D8D8D8;
 		--textColor:black;
@@ -17,7 +17,7 @@ const CardWrapper = style`
 		background:var(--puffinCardBackground,var(--cardBackground));
 		border:0;
 		outline:0;
-		box-shadow:0px 0px 0px 0px rgba(0,0,0,0) ,0 0 0 0px var(--puffinAccent,var(--accentColor)); 
+		box-shadow:0px 0px 0px 0px rgba(0,0,0,0) ,0 0 0 0px var(--puffinAccent,var(--cardAccentColor)); 
 		margin:5px;
 		border-radius:5px;
 		color:var(--puffinTextColor,var(--textColor));
@@ -28,19 +28,19 @@ const CardWrapper = style`
 		&:hover:not(:active){
 		cursor:pointer;
 		transition:0.1s;
-		box-shadow:0px 1px 5px 2px rgba(0,0,0,.05) ,0 0 0 0px var(--puffinAccent,var(--accentColor));  
+		box-shadow:0px 1px 5px 2px rgba(0,0,0,.05) ,0 0 0 0px var(--puffinAccent,var(--cardAccentColor));  
 	}
 	&:active{
 		border:0;
 		outline:0;
 		box-sizing: border-box;
-		box-shadow:0px 1px 5px 3px rgba(0,0,0,.05) ,0 0 0 3px var(--puffinAccent,var(--accentColor));  
+		box-shadow:0px 1px 5px 3px rgba(0,0,0,.05) ,0 0 0 3px var(--puffinAccent,var(--cardAccentColor));  
 	}
 	&.active{
 		border:0;
 		outline:0;
 		box-sizing: border-box;
-		box-shadow:0px 1px 5px 3px rgba(0,0,0,.05) ,0 0 0 3px var(--puffinAccent,var(--accentColor));  
+		box-shadow:0px 1px 5px 3px rgba(0,0,0,.05) ,0 0 0 3px var(--puffinAccent,var(--cardAccentColor));  
 	}
 	&.disabled{
 		pointer-events: none;

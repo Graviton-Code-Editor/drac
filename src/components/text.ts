@@ -2,7 +2,6 @@ import  { element, style } from '@mkenzo_8/puffin'
 
 const TextWrapper = style`
 	&{
-	--accentColor:#0066FF;
 	--secondaryColor:#EFEFEF;
 	--textColor:black;
 	--font:Montserrat, sans-serif;
