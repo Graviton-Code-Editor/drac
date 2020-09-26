@@ -10,6 +10,7 @@ This package is a set of [PuffinJS](https://github.com/PuffinJS/puffin) componen
 * Navigation Bar
 * Text
 * H1...H6 titles
+* Input
 
 ## 🍜 Usage
 
