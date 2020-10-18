@@ -17,7 +17,7 @@ const ButtonWrapper = style`
 		box-shadow:0px 0px 0px 0px rgba(0,0,0,0) ,0 0 0 0px var(--puffinAccent,var(--buttonAccentColor)); 
 		margin:5px;
 		border-radius:5px;
-		color:var(--puffinTextColor,var(--textColor));
+		color:var(--puffinButtonText,var(--textColorpuffinTextColor,var(--)));
 		font-size:13px;
 	}
 	&:hover:not(:active){

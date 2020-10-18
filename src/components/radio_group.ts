@@ -52,7 +52,7 @@ const RadioGroupWrapper = style`
 		right:0;
 		color:var(--puffinTextColor,var(--textColor));
 	}
-	&[direction="vertically"] {
+	&[direction="horizontally"] {
 		display:flex;
 	}
 	& label[styled="true"] input:checked ~ .circle{
@@ -104,7 +104,7 @@ const RadioGroupWrapper = style`
 `
 function mounted(){
 	const target = this
-	if(target.getAttribute("direction") == null) target.setAttribute("direction","horizontally")
+	if(target.getAttribute("direction") == null) target.setAttribute("direction","vertically")
 	if(target.getAttribute("styled") == null) target.setAttribute("styled","true")
 	if(target.children.length > 0){
 		if(target.children[0].tagName == "DIV") return;
@@ -119,7 +119,6 @@ function mounted(){
 				}else{
 					render(Option(randomName,radio,target),radio)
 				}
-				
 			}
 		}
 	}
