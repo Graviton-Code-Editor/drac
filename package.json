@@ -1,6 +1,6 @@
 {
 	"name": "@mkenzo_8/puffin-drac",
-	"version": "0.1.8",
+	"version": "0.1.9",
 	"description": "Drac Design System for PuffinJS",
 	"main": "bin/index.js",
 	"dependencies": {
