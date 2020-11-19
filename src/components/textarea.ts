@@ -18,11 +18,11 @@ const TextAreaWrapper = style`
 		color:var(--puffinTextColor,var(--textColor));
 		font-size:13px;
 		transition-duration: 0.1s;
-		transition-property: -border;
+		transition-property: box-shadow;
 	}
 	&:focus{
 		transition-duration: 0.1s;
-		transition-property: -border;
+		transition-property: box-shadow;
 		box-shadow:0px 1px 5px 2px rgba(0,0,0,.05) ,0 0 0 3px var(--puffinTextAreaBorder,var(--textAreaBorder));  
 		border:0;
 		outline:0;
