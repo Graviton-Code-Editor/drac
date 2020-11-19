@@ -32,8 +32,8 @@ const InputWrapper = style`
 	}
 `
 
-function Button(){
+function Input(){
 	return element`<input class="${InputWrapper}"/>`
 }
 
-export default Button
+export default Input

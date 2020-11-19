@@ -7,6 +7,7 @@ import ButtonsRoute from './routes/buttons'
 import TextRoute from './routes/text'
 import CardRoute from './routes/card'
 import InputRoute from './routes/input'
+import TextAreaRoute from './routes/textarea'
 
 const App = element({
 	components:{
@@ -18,7 +19,8 @@ const App = element({
 		TextRoute,
 		CardRoute,
 		HomeRoute,
-		InputRoute
+		InputRoute,
+		TextAreaRoute
 	}
 })`
 	<div>
@@ -26,9 +28,10 @@ const App = element({
 			<routerLink group="home" to="/home">Home</routerLink>
 			<routerLink group="home" to="/radio_group">Radio group</routerLink>
 			<routerLink group="home" to="/button">Button</routerLink>
-			<routerLink group="home" to="/text">Text</routerLink>
+			<routerLink group="home" to="/titlestext">Text</routerLink>
 			<routerLink group="home" to="/card">Card</routerLink>
 			<routerLink group="home" to="/input">Input</routerLink>
+			<routerLink group="home" to="/textarea">TextArea</routerLink>
 		</NavBar>
 		<routerBox group="home" default="/home">
 			<div from="/home">
@@ -40,7 +43,7 @@ const App = element({
 			<div from="/button">
 				<ButtonsRoute/>
 			</div>
-			<div from="/text">
+			<div from="/titlestext">
 				<TextRoute/>
 			</div>
 			<div from="/card">
@@ -48,6 +51,9 @@ const App = element({
 			</div>
 			<div from="/input">
 				<InputRoute/>
+			</div>
+			<div from ="/textarea">
+				<TextAreaRoute/>
 			</div>
 		</routerBox>
 		

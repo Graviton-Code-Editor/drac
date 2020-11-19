@@ -11,6 +11,7 @@ This package is a set of [PuffinJS](https://github.com/PuffinJS/puffin) componen
 * Text
 * H1...H6 titles
 * Input
+* TextArea
 
 ## 🍜 Usage
 
