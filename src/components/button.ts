@@ -11,14 +11,16 @@ const ButtonWrapper = style`
 		font-family:var(--puffinFont,var(--font));
 		padding:10px 20px;
 		background:var(--puffinButtonBackground,var(--buttonBackground));
-		border:0;
-		outline:0;
+		border: none;
+		outline: none;
 		text-transform: uppercase;
 		box-shadow:0px 0px 0px 0px rgba(0,0,0,0) ,0 0 0 0px var(--puffinAccent,var(--buttonAccentColor)); 
 		margin:5px;
 		border-radius:5px;
 		color:var(--puffinButtonText,var(--textColorpuffinTextColor,var(--)));
 		font-size:13px;
+		-webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+    -webkit-focus-ring-color: rgba(255, 255, 255, 0); 
 	}
 	&:hover:not(:active){
 		cursor:pointer;
