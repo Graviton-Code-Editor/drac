@@ -17,7 +17,7 @@ This package is a set of [PuffinJS](https://github.com/PuffinJS/puffin) componen
 
 Installation:
 ```sh
-npm run install @mkenzo_8/puffin-drac
+npm install @mkenzo_8/puffin-drac
 ```
 
 Example:
