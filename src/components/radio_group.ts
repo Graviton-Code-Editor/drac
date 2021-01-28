@@ -106,30 +106,9 @@ function mounted(){
 	const target = this
 	if(target.getAttribute('direction') == null) target.setAttribute('direction', 'vertically')
 	if(target.getAttribute('styled') == null) target.setAttribute('styled', 'true')
-	/*
-	if(target.getAttribute("direction") == null) target.setAttribute("direction","vertically")
-	if(target.getAttribute("styled") == null) target.setAttribute("styled","true")
-	if(target.children.length > 0){
-		if(target.children[0].tagName == "DIV") return;
-		const radios = target.children
-		const randomName = Math.random()
-		for( const radio of radios){
-			if(radio.tagName == "LABEL"){
-				if(radio.getAttribute("styled") == null) {
-					radio.setAttribute("styled","true")
-					if(radio.getAttribute("hidden-radio") == null) radio.setAttribute("hidden-radio","false")
-					render(Option(randomName,radio,target),radio)
-				}else{
-					render(Option(randomName,radio,target),radio)
-				}
-			}
-		}
-	}
-	*/
 }
 function RadioGroup({ options }){
 	const name = Math.random()
-		
 	
 	return element`
 	<div mounted="${mounted}" class="${RadioGroupWrapper}">
@@ -152,6 +131,5 @@ function RadioGroup({ options }){
 		})}
 	</div>`
 }
-
 
 export default RadioGroup
