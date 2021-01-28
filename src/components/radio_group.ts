@@ -1,29 +1,29 @@
 import  { element, style, render } from '@mkenzo_8/puffin'
 
-function Option(name,radio,target){
-	const radioContent = radio.innerHTML
-	const radioText = radio.innerText
-	radio.innerHTML = ""
+function Option({ content, name, checked = false, hiddenRadio = false, styled = true }){
 	function selected(){
-		const event = new CustomEvent('radioSelected', { detail: {target:radio} });
-		target.dispatchEvent(event);
+		const event = new CustomEvent('radioSelected', { detail: {
+			target: this.parentElement,
+			content
+		}})
+		this.parentElement.parentElement.parentElement.dispatchEvent(event)
 	}
+	
 	function mounted(){
-		if( radioContent == radioText ){
-			this.innerText = radioContent
-		}else{
-			this.innerHTML = radioContent
+		if( checked ){
+			this.children[0].children[0].setAttribute('checked','')
 		}
-		if( radio.getAttribute("checked") == "true" ){
-			this.parentElement.children[0].setAttribute("checked","")
-		}
+		this.setAttribute('hidden-radio',hiddenRadio.toString())
+		this.setAttribute('styled',styled.toString())
 	}
 	return element`
-		<div class="wrapper">
-			<input :click="${selected}" type="radio" name="${name}"></input>
-			<div class="circle"></div>
-			<p mounted="${mounted}"></p> 
-		</div>
+		<label mounted="${mounted}">
+			<div class="wrapper">
+				<input :click="${selected}" type="radio" name="${name}"></input>
+				<div class="circle"></div>
+				<p>${content}</p> 
+			</div>
+		</label>
     `
 	
 }
@@ -84,7 +84,7 @@ const RadioGroupWrapper = style`
 	& label[styled="true"] input{
 		display:none;
 	}
-	& label[hidden-radio="true"] input{
+	& label[hidden-radio="true"] .circle, label[hidden-radio="true"] input{
 		display:none;
 	}
 	& label[styled="true"] .circle{
@@ -104,6 +104,9 @@ const RadioGroupWrapper = style`
 `
 function mounted(){
 	const target = this
+	if(target.getAttribute('direction') == null) target.setAttribute('direction', 'vertically')
+	if(target.getAttribute('styled') == null) target.setAttribute('styled', 'true')
+	/*
 	if(target.getAttribute("direction") == null) target.setAttribute("direction","vertically")
 	if(target.getAttribute("styled") == null) target.setAttribute("styled","true")
 	if(target.children.length > 0){
@@ -122,9 +125,32 @@ function mounted(){
 			}
 		}
 	}
+	*/
 }
-function RadioGroup(){
-	return element`<div mounted="${mounted}" class="${RadioGroupWrapper}"></div>`
+function RadioGroup({ options }){
+	const name = Math.random()
+		
+	
+	return element`
+	<div mounted="${mounted}" class="${RadioGroupWrapper}">
+		${options.map(option => {
+			if(typeof option === 'string') return Option({ 
+				content: option, 
+				name 
+			})
+			if(typeof option === 'object') return Option({ 
+				content: option.label || option.component(),
+				name,
+				checked: option.checked,
+				hiddenRadio: option.hiddenRadio,
+				styled: option.styled
+			})
+			if(typeof option === 'function') return Option({ 
+				content: option(),
+				name
+			})
+		})}
+	</div>`
 }
 
 

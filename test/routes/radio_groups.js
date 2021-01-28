@@ -1,9 +1,9 @@
 import { element } from '@mkenzo_8/puffin'
-import { RadioGroup} from '../../src/index'
+import { RadioGroup, Card } from '../../src/index'
 
 function RadioGroupRoute () {
 	function radioSelected(e){
-		console.log(e.detail.target)
+		console.log(e.detail.content)
 	}
 	return element({
 		components:{
@@ -11,11 +11,21 @@ function RadioGroupRoute () {
 		}
 	})`
 		<div>
-			<RadioGroup :radioSelected="${radioSelected}">
-				<label>Option 1</label>
-				<label checked="true">Option 2 (default)</label>
-				<label>Option 3</label>
-				<label styled="false">Not styled radio</label>
+			<RadioGroup :radioSelected="${radioSelected}" direction="horizontally" options="${[
+				'Option 1',
+				{
+					label: 'Option 2 (default)',
+					checked: true,
+					hiddenRadio: true
+				},
+				'Option 3',
+				() => element({components: { Card }})`<Card>test</Card>`,
+				{
+					component: () => element({components: { Card }})`<Card>test</Card>`,
+					styled: false,
+					hiddenRadio: true
+				}
+			]}">
 			</RadioGroup>
 		</div>`
 }
