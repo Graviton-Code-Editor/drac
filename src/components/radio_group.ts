@@ -1,6 +1,6 @@
 import  { element, style, render } from '@mkenzo_8/puffin'
 
-function Option({ content, name, checked = false, hiddenRadio = false, styled = true, key = '' }){
+function Option({ translated = false,content, name, checked = false, hiddenRadio = false, styled = true, key = '' }){
 	function selected(){
 		const event = new CustomEvent('radioSelected', { detail: {
 			target: this.parentElement,
@@ -22,7 +22,7 @@ function Option({ content, name, checked = false, hiddenRadio = false, styled = 
 			<div class="wrapper">
 				<input :click="${selected}" type="radio" name="${name}"></input>
 				<div class="circle"></div>
-				<p>${content}</p> 
+				<p lang-string="${content}">${translated ? '' : content }</p> 
 			</div>
 		</label>
     `
@@ -108,7 +108,7 @@ function mounted(){
 	if(target.getAttribute('direction') == null) target.setAttribute('direction', 'vertically')
 	if(target.getAttribute('styled') == null) target.setAttribute('styled', 'true')
 }
-function RadioGroup({ options }){
+function RadioGroup({ translated, options }){
 	const name = Math.random()
 	
 	return element`
@@ -116,7 +116,8 @@ function RadioGroup({ options }){
 		${options.map(option => {
 			if(typeof option === 'string') return Option({ 
 				content: option, 
-				name
+				name,
+				translated
 			})
 			if(typeof option === 'object') return Option({ 
 				content: option.label || option.component(),
@@ -124,11 +125,13 @@ function RadioGroup({ options }){
 				checked: option.checked,
 				hiddenRadio: option.hiddenRadio,
 				styled: option.styled,
-				key: option.key
+				key: option.key,
+				translated
 			})
 			if(typeof option === 'function') return Option({ 
 				content: option(),
-				name
+				name,
+				translated
 			})
 		})}
 	</div>`
