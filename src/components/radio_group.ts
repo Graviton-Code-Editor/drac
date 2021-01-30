@@ -1,10 +1,11 @@
 import  { element, style, render } from '@mkenzo_8/puffin'
 
-function Option({ content, name, checked = false, hiddenRadio = false, styled = true }){
+function Option({ content, name, checked = false, hiddenRadio = false, styled = true, key = '' }){
 	function selected(){
 		const event = new CustomEvent('radioSelected', { detail: {
 			target: this.parentElement,
-			content
+			content,
+			key
 		}})
 		this.parentElement.parentElement.parentElement.dispatchEvent(event)
 	}
@@ -17,7 +18,7 @@ function Option({ content, name, checked = false, hiddenRadio = false, styled = 
 		this.setAttribute('styled',styled.toString())
 	}
 	return element`
-		<label mounted="${mounted}">
+		<label mounted="${mounted}" key="${key}">
 			<div class="wrapper">
 				<input :click="${selected}" type="radio" name="${name}"></input>
 				<div class="circle"></div>
@@ -115,14 +116,15 @@ function RadioGroup({ options }){
 		${options.map(option => {
 			if(typeof option === 'string') return Option({ 
 				content: option, 
-				name 
+				name
 			})
 			if(typeof option === 'object') return Option({ 
 				content: option.label || option.component(),
 				name,
 				checked: option.checked,
 				hiddenRadio: option.hiddenRadio,
-				styled: option.styled
+				styled: option.styled,
+				key: option.key
 			})
 			if(typeof option === 'function') return Option({ 
 				content: option(),
