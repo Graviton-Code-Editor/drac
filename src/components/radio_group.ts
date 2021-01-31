@@ -17,12 +17,13 @@ function Option({ translated = false,content, name, checked = false, hiddenRadio
 		this.setAttribute('hidden-radio',hiddenRadio.toString())
 		this.setAttribute('styled',styled.toString())
 	}
+	const isLabel = typeof content === 'string'
 	return element`
 		<label mounted="${mounted}" key="${key}">
 			<div class="wrapper">
 				<input :click="${selected}" type="radio" name="${name}"></input>
 				<div class="circle"></div>
-				<p lang-string="${content}">${translated ? '' : content }</p> 
+				<p lang-string="${translated && isLabel ? content : ''}">${translated && isLabel ? '' : content }</p> 
 			</div>
 		</label>
     `

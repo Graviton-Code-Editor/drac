@@ -11,7 +11,7 @@ function RadioGroupRoute () {
 		}
 	})`
 		<div>
-			<RadioGroup :radioSelected="${radioSelected}" direction="horizontally" options="${[
+			<RadioGroup translated="${true}" :radioSelected="${radioSelected}" direction="horizontally" options="${[
 				'Option 1',
 				{
 					label: 'Option 2 (default)',
